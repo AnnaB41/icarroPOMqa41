@@ -8,6 +8,11 @@ public class SearchPage extends BasePage{
 
     By btnOpenMenu = By.xpath("//*[@content-desc='More options']");
     By buttonsInMenu = By.xpath("//*[@resource-id='com.telran.ilcarro:id/title']");
+    By inputLocation = By.xpath("//*[@resource-id='com.telran.ilcarro:id/editLocation']");
+    By inputDateFrom = By.xpath("//*[@resource-id='com.telran.ilcarro:id/editFrom']");
+    By inputDateTo = By.xpath("//*[@resource-id='com.telran.ilcarro:id/editTo']");
+    By btnYalla = By.xpath("//*[@resource-id='com.telran.ilcarro:id/searchBtn']");
+
 
 
 
@@ -33,5 +38,14 @@ public class SearchPage extends BasePage{
     public boolean validateMyCarsExist() {
         clickBase(btnOpenMenu);
         return getTextBase(buttonsInMenu).equals("My Cars");
+    }
+
+    public void clickMyCars() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        clickBase(buttonsInMenu);
     }
 }
